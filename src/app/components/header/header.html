@@ -1,0 +1,34 @@
+<header>
+  <div class="flex flex-row w-full h-18 items-center">
+    <div class="pl-10 basis-2/3">
+      <a routerLink="/" class="font-merriweather text-[35px] cursor-pointer">
+        João Victor Alves da Silva
+      </a>
+    </div>
+
+    <div class="flex items-center">
+      <span (click)="onToggleTheme()" class="material-symbols-outlined text-2xl cursor-pointer">
+        @if (getTheme()) {
+          dark_mode
+        }@else{
+          light_mode
+        }
+      </span>
+    </div>
+
+    <div class="flex basis-1/3 justify-center gap-7.5 items-center ">
+      <a routerLink="/"
+         routerLinkActive="text-white"
+         [routerLinkActiveOptions]="{exact: true}"
+         class="text-2xl font-roboto cursor-pointer hover:bg-[#141413]">Sobre mim</a>
+
+      <a routerLink="/professional"
+         routerLinkActive="text-white"
+         class="text-2xl font-roboto cursor-pointer hover:bg-[#141413]">Experiências profissionais</a>
+
+      <a routerLink="/contact"
+         routerLinkActive="text-white"
+         class="text-2xl font-roboto cursor-pointer hover:bg-[#141413]">Contato</a>
+    </div>
+  </div>
+</header>

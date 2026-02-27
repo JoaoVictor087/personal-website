@@ -11,7 +11,7 @@ export class ThemeService {
     this.renderer = rendererFactory.createRenderer(null, null)
   }
 
-  getActualTheme(): boolean {
+  getCurrentTheme():boolean{
     return this.isDarkMode;
   }
 
