@@ -5,6 +5,10 @@
 @theme{
   --font-merriweather: "Merriweather", serif;
   --font-roboto: "Roboto", sans-serif;
+  --color-text-select: var(--color-text-select);
+  --color-hover: var(--color-hover);
+  --color-selected-color: var(--color-selected-color);
+
 }
 
 
@@ -12,15 +16,18 @@
   --color-primary: #262624;
   --color-secondary: #30302E;
   --color-text: #C2C0B6;
-  --hover-select: #141413;
+  --color-text-select: #ffffff;
+  --color-hover: #1F1E1D;
+  --color-selected-color: #141413;
 }
 
 body.light-theme{
   --color-primary: #FAF9F5;
   --color-secondary: #FFFFFF;
   --color-text: #3D3D3A;
-  --hover-select: #F0EEE6;
-
+  --color-text-select: #000000;
+  --color-hover: #F5F4ED;
+  --color-selected-color: #F0EEE6;
 }
 
 body {
@@ -29,7 +36,4 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-card-hover:hover {
-  background-color: var(--hover-select);
-  color: var(--color-text)
-}
+
