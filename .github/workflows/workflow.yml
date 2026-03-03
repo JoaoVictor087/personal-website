@@ -1,0 +1,25 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Update project files
+        run: |
+          # 1. Tenta parar e remover o container atual para liberar a porta 8080
+          docker stop personalwebsite || true
+          docker rm personalwebsite || true
+
+          # 2. Constrói a imagem nova com o código que você acabou de dar push
+          docker build -t personalwebsite .
+
+          # 3. Sobe o container novo na mesma porta que o Cloudflare Tunnel está vigiando
+          docker run -d --name personalwebsite -p 8080:80 personalwebsite
