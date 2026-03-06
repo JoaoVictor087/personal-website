@@ -13,8 +13,13 @@ import {toSignal} from '@angular/core/rxjs-interop';
   templateUrl: './header.html'
 })
 export class Header {
+  menuOpen = false;
 
   constructor(public themeservice: ThemeService) {
+  }
+
+  toggleMenu(){
+    this.menuOpen = !this.menuOpen;
   }
 
   protected onToggleTheme() {
