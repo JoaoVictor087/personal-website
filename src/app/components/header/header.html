@@ -29,8 +29,12 @@
          class="text-xl font-roboto cursor-pointer p-3 hover:bg-hover font-semibold">Contato</a>
     </nav>
     <!-- Hamburguer -- Mobile only-->
-    <button class="flex md:hidden ml-2" (click)="toggleMenu()">
-      <span class="material-symbols-outlined text-3xl cursor-pointer">menu</span>
+    <button class="flex md:hidden ml-2 transition-transform duration-300"
+            [class.rotate-90]="menuOpen"
+            (click)="toggleMenu()">
+  <span class="material-symbols-outlined text-3xl cursor-pointer">
+    {{ menuOpen ? 'close' : 'menu' }}
+  </span>
     </button>
 
   </div>
