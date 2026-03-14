@@ -1,0 +1,7 @@
+services:
+  portfolio:
+    build: .
+    container_name: personal-website
+    restart: always
+    ports:
+      - "8080:80"
